@@ -238,6 +238,9 @@ h2{
         justify-content: center;
         margin-right:0;
     }
+    h1{
+        font-size: 40px;
+    }
 }
 
 
