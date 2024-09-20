@@ -111,7 +111,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 .dropdown{
     background-color: light-dark(var(--lightBtn), var(--darkBtn));
-    border: none;
+    border: solid light-dark(var(--lightBtn), var(--darkBtn));
     padding: 16px 32px;
     border-radius: 8px;
     -webkit-appearance: none; /* For Safari */
