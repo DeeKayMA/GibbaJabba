@@ -1,0 +1,258 @@
+/* General*/
+:root {
+    color-scheme: light dark;
+    --accent: #FD513C; /* Define the accent color as a CSS variable */
+    --accenthover: #FD513C80; /* Define the accent color as a CSS variable */
+    --light:#FEFDFA; /* Define the light color as a CSS variable */
+    --lightBtn:#E9E5E0;
+    --darkBtn:#3A3836;
+    --dark: #1C1B18; /* Define the dark color as a CSS variable */
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      background-color: light-dark(var(--light), var(--dark));
+      margin: 40px 100px;
+      padding: 0;
+      
+  }
+  
+  
+  h1, h2, h3, h4, h5, h6, p {
+    color: light-dark(var(--dark), var(--light));
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  .flexrow{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+  }
+
+  .flexwrap{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Header*/
+
+
+
+  /* Input & Button*/
+
+  .inputandbutton{
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+#inputWord {
+    flex-grow: 1; /* Make the input field take up the remaining space */
+    background-color: light-dark(var(--light), var(--dark));
+    border-radius: 8px;
+    border: solid 2px light-dark(var(--dark), var(--light));
+    padding: 16px 24px;
+    margin: 0;
+}
+
+button#randButton {
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    padding: 16px 32px;
+      font-size: 16px;
+      background-color: var(--accent);
+      color: var(--light);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+}
+
+#randButton:hover{
+    background-color: var(--accenthover);
+    color: light-dark(var(--dark), var(--light));
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    /*width: 100%;
+    display: block;
+    margin: 0 auto;*/
+    border: solid 2px light-dark(var(--dark), var(--light));
+
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    /*width: 100%;*/
+    background-color: light-dark(var(--dark), var(--light));
+    height:2px;
+}
+
+input.slider {
+    flex-grow: 1; /* Make the input stretch to fill remaining space */
+    margin: 32px 0 32px 0;
+}
+
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px; /* Set thumb height */
+    width: 20px; /* Set thumb width */
+    background: var(--accent); /* Change thumb color */
+    border: solid 2px light-dark(var(--dark), var(--light));
+    border-radius: 50%; /* Make thumb circular */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.dropdown{
+    background-color: light-dark(var(--lightBtn), var(--darkBtn));
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    text-align: center;
+}
+  
+  
+
+  
+p {
+    font-size: 18px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 32px 0;
+}
+  
+
+  /* Styling*/
+
+.styling{
+    gap: 8px;
+    margin: 0 0 64px 0;
+    width:100%;
+
+}
+.stylingBtns{
+    gap:8px;
+    margin-right:16px;
+}
+
+.sliderDiv{
+    flex-grow: 1;
+    display: flex;
+}
+
+.selection{
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: light-dark(var(--dark), var(--light));
+    background-color: light-dark(var(--lightBtn), var(--darkBtn))
+ }
+
+ 
+.selection:hover{
+    background-color: var(--accenthover);
+ }
+
+.selection:active{
+    transform: scale(0.95);
+    /*background-color: var(--accent);
+    color: var(--light)*/
+ }
+
+
+
+  /* ------Casing  */
+
+
+ /* ------bold-italic  */
+  
+.selection.bold{
+    font-weight: bold;
+}
+.selection.italic{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ------bold-italic  */
+
+.sizing{
+    width: 100%;
+}
+
+  /* Results & */
+
+  .option{
+    font-size: 32px;
+    font-family: 'lato', sans-serif;
+    padding-bottom: 16px;;
+  }
+
+
+  @media only screen and (max-width: 836px){
+
+    input.slider {
+        width:100%;
+    }
+    
+    
+  }
+
+
+
+@media only screen and (max-width: 700px) {
+    .inputandbutton {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Arrange items in a row */
+        gap: 16px; /* Add space between elements */
+    }
+
+    #inputWord, #randButton {
+        flex-grow: 1; /* Allow both to grow and fill available space */
+        width: 100%; /* Ensure they take full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+    body{
+        margin: 40px 40px;
+      }
+
+    .stylingBtns{
+        display: flex;
+        justify-content: center;
+        margin-right:0;
+    }
+}
+
+
+/*Classes for the styling button*/
+
+/*.bold{
+    font-weight: bold
+}
+
+.italic{
+    font-style:italic
+}*/
+.active{
+    background-color: var(--accent);
+    color: var(--light);
+}
+
+

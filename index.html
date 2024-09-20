@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gibba Jabba</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Gibba Jabba</h1>
+    <h2>Make words fun</h2>
+    <!--Input & random word button-->
+    <div class="flexrow inputandbutton">
+        <input type="text" id="inputWord" placeholder="Type a word">
+        <button id="randButton">Random Word</button>
+    </div>
+
+    <!--Styling fields-->
+    <div class="flexrow styling flexwrap">
+        <div class="flexrow stylingBtns flexwrap">
+            <!--<button id="randButton">Random Word</button>-->
+            <div id="light-mode" class="selection sun">☼</div>
+            <div id="dark-mode" class="selection moon">☾</div>
+            <select class="dropdown" id="font-selector">
+                <option>Lato</option>
+                <option>Times New Roman</option>
+                <option>Lucida Sans</option>
+                <option>Playfair</option>
+                <option>Impact</option>
+            </select>
+            <div class="selection active" id="normalcase">Aa</div>
+            <div class="selection" id="uppercase">AA</div>
+            <div class="selection" id="lowercase">aa</div>
+            <div class="selection bold" id="boldBtn">B</div>
+            <div class="selection italic" id="italicBtn">I</div>
+        </div>
+        <div class="sliderDiv">
+            <input id="fontSizeSlider" class="slider" type="range" min="16" max="64" value="32" step="0.01">
+        </div>
+    </div>
+
+    <!--Generated words-->
+    <div>
+        <p class="option" id="option5"></p>
+        <p class="option" id="option1"></p>
+        <p class="option" id="option2"></p>
+        <p class="option" id="option3"></p>
+        <p class="option" id="option4"></p>
+        
+    </div>
+    
+
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
