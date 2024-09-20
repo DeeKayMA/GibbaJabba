@@ -146,6 +146,10 @@ boldButton.addEventListener('click', function(){
     toggleStyleForElement(option5,'fontWeight', 'bold');
 });
 
+if (!boldButton.classList.contains('active')){
+    boldButton.classList.remove('active');
+}
+
 // Italic ths resutls 
 italicButton.addEventListener('click', function(){
     italicButton.classList.toggle('active');
@@ -155,6 +159,10 @@ italicButton.addEventListener('click', function(){
     toggleStyleForElement(option4,'fontStyle', 'italic');
     toggleStyleForElement(option5,'fontStyle', 'italic');
 });
+
+if (!italicButton.classList.contains('active')){
+    italicButton.classList.remove('active');
+}
 
 // lowercase-----
 lowercaseButton.addEventListener('click', function(){
