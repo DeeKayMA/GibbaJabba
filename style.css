@@ -244,6 +244,9 @@ h2{
     .selection:hover{
         background-color: none;
      }
+     #randButton:hover{
+        background-color: var(--accent);
+    }
 }
 
 
