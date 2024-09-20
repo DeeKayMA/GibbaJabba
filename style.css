@@ -241,6 +241,9 @@ h2{
     h1{
         font-size: 40px;
     }
+    .selection:hover{
+        background-color: var(--accent);
+     }
 }
 
 
