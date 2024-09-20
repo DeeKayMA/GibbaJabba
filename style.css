@@ -242,7 +242,7 @@ h2{
         font-size: 40px;
     }
     .selection:hover{
-        background-color: var(--accent);
+        background-color: none;
      }
 }
 
