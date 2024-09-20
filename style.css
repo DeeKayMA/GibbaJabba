@@ -166,9 +166,9 @@ h2{
  }
 
  
-/*.selection:hover{
-    background-color: var(--accenthover);
- }*/
+.selection:hover, select:hover{
+    cursor:pointer;
+ }
 
 .selection:active{
     transform: scale(0.95);
