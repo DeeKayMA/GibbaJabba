@@ -166,7 +166,7 @@ if (!italicButton.classList.contains('active')){
 
 // lowercase-----
 lowercaseButton.addEventListener('click', function(){
-    lowercaseButton.classList.toggle('active');
+    lowercaseButton.classList.add('active');
     uppercaseButton.classList.remove('active');
     normalcaseButton.classList.remove('active')
     toggleStyleForElement(option1,'textTransform', 'lowercase');
@@ -179,7 +179,7 @@ lowercaseButton.addEventListener('click', function(){
 // uppercase-----
 uppercaseButton.addEventListener('click', function(){
     lowercaseButton.classList.remove('active');
-    uppercaseButton.classList.toggle('active');
+    uppercaseButton.classList.add('active');
     normalcaseButton.classList.remove('active')
     toggleStyleForElement(option1,'textTransform', 'uppercase');
     toggleStyleForElement(option2,'textTransform', 'uppercase');
@@ -192,7 +192,7 @@ uppercaseButton.addEventListener('click', function(){
 normalcaseButton.addEventListener('click', function(){
     lowercaseButton.classList.remove('active');
     uppercaseButton.classList.remove('active');
-    normalcaseButton.classList.toggle('active')
+    normalcaseButton.classList.add('active')
     toggleStyleForElement(option1,'textTransform', 'none')
     toggleStyleForElement(option2,'textTransform', 'none')
     toggleStyleForElement(option3,'textTransform', 'none')
@@ -265,7 +265,7 @@ fontSizeSlider.addEventListener('input', function(){
 
 // Light Mode-----
 lightModeButton.addEventListener('click', function(){
-    lightModeButton.classList.toggle('active');
+    lightModeButton.classList.add('active');
     darkModeButton.classList.remove('active')
     root.style.setProperty('color-scheme', 'light')
 });
@@ -273,6 +273,6 @@ lightModeButton.addEventListener('click', function(){
 // Dark Mode-----
 darkModeButton.addEventListener('click', function(){
     lightModeButton.classList.remove('active');
-    darkModeButton.classList.toggle('active')
+    darkModeButton.classList.add('active')
     root.style.setProperty('color-scheme', 'dark')
 });
