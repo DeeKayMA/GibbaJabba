@@ -18,7 +18,7 @@
   }
   
   
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6, p, .dropdown {
     color: light-dark(var(--dark), var(--light));
     text-align: center;
     font-family: "Exo 2", sans-serif;

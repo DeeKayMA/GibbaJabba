@@ -225,12 +225,12 @@ fontSelector.addEventListener('change', function (){
             toggleStyleForElement(option4,'fontFamily', "'Lato', sans-serif");
             toggleStyleForElement(option5,'fontFamily', "'Lato', sans-serif");
             break;
-        case 'Lucida Sans':
-            toggleStyleForElement(option1,'fontFamily', "'Lucida Sans', sans-serif");
-            toggleStyleForElement(option2,'fontFamily', "'Lucida Sans', sans-serif");
-            toggleStyleForElement(option3,'fontFamily', "'Lucida Sans', sans-serif");
-            toggleStyleForElement(option4,'fontFamily', "'Lucida Sans', sans-serif");
-            toggleStyleForElement(option5,'fontFamily', "'Lucida Sans', sans-serif");
+        case 'Brush Script MT':
+            toggleStyleForElement(option1,'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option2,'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option3,'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option4,'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option5,'fontFamily', "'Brush Script MT', cursive");
             break;
         case 'Impact':
             toggleStyleForElement(option1,'fontFamily', "'Impact', sans-serif");
@@ -240,11 +240,11 @@ fontSelector.addEventListener('change', function (){
             toggleStyleForElement(option5,'fontFamily', "'Impact', sans-serif");
         break;
         default:
-            toggleStyleForElement(option1,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option2,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option3,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option4,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option5,'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option1,'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option2,'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option3,'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option4,'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option5,'fontFamily', "'Exo 2', sans-serif");
 
     }
 });
