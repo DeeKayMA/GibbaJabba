@@ -153,7 +153,7 @@ const randButton = document.getElementById('randButton');
 const apiKey = "UvdhHhgzc3MbsFY6eQc6Xw==fhBF8WcUw9RwvJNo";
 
 randButton.addEventListener('click', () => {
-    fetch('https://api.api-ninjas.com/v1/randomword', {
+    fetch('https://api.api-ninjas.com/v1/randomword?adverb', {
         method:'GET',
         headers: {
             'X-Api-Key': apiKey
