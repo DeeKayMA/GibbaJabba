@@ -259,11 +259,11 @@ normalcaseButton.addEventListener('click', function () {
     lowercaseButton.classList.remove('active');
     uppercaseButton.classList.remove('active');
     normalcaseButton.classList.add('active')
-    toggleStyleForElement(option1, 'textTransform', 'none')
-    toggleStyleForElement(option2, 'textTransform', 'none')
-    toggleStyleForElement(option3, 'textTransform', 'none')
-    toggleStyleForElement(option4, 'textTransform', 'none')
-    toggleStyleForElement(option5, 'textTransform', 'none')
+    toggleStyleForElement(option1, 'textTransform', 'capitalize')
+    toggleStyleForElement(option2, 'textTransform', 'capitalize')
+    toggleStyleForElement(option3, 'textTransform', 'capitalize')
+    toggleStyleForElement(option4, 'textTransform', 'capitalize')
+    toggleStyleForElement(option5, 'textTransform', 'capitalize')
 });
 
 //Change font
