@@ -172,8 +172,6 @@ h2{
 
 .selection:active{
     transform: scale(0.95);
-    /*background-color: var(--accent);
-    color: var(--light)*/
  }
 
 

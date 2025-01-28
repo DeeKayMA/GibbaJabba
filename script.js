@@ -41,6 +41,7 @@ function Gibberish(word) {
     return newWord;
 }
 
+
 //Processes the Gibberish
 function processWord() {
     const input = document.getElementById('inputWord').value;
@@ -58,7 +59,7 @@ function processWord() {
 }
 
 //Returns random word form array
-function randWord(){
+function randWord() {
     let randomWords = [
         "Banana",
         "Area",
@@ -142,18 +143,37 @@ function randWord(){
         "Lightning",
         "Fog"
     ]
-    let randNum = Math.floor(Math.random()* randomWords.length)
+    let randNum = Math.floor(Math.random() * randomWords.length)
     return randomWords[randNum]
 }
 
 const inputField = document.getElementById('inputWord');
 const randButton = document.getElementById('randButton');
 
+const apiKey = "UvdhHhgzc3MbsFY6eQc6Xw==fhBF8WcUw9RwvJNo";
 
-
-randButton.addEventListener('click', function(){
-    inputField.value = randWord();
-    processWord()
+randButton.addEventListener('click', () => {
+    fetch('https://api.api-ninjas.com/v1/randomword', {
+        method:'GET',
+        headers: {
+            'X-Api-Key': apiKey
+        }
+    }).then(response => {
+        if( !response.ok){
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Random Word:', data.word);
+        inputField.value = data.word;
+        processWord()
+    })
+    .catch(error => {
+        console.log('Error', error);
+        inputField.value = 'Random Word API not working';
+        processWord()
+    });
 
 })
 
@@ -173,11 +193,7 @@ const darkModeButton = document.getElementById('dark-mode');
 const root = document.documentElement;
 
 
-const option1 = document.getElementById('option1');
-const option2 = document.getElementById('option2');
-const option3 = document.getElementById('option3');
-const option4 = document.getElementById('option4');
-const option5 = document.getElementById('option5');
+
 
 //Helper function 
 function toggleStyleForElement(element, styleProperty, value) {
@@ -187,141 +203,141 @@ function toggleStyleForElement(element, styleProperty, value) {
 
 
 //Bold the results
-boldButton.addEventListener('click', function(){
+boldButton.addEventListener('click', function () {
     boldButton.classList.toggle('active');
-    toggleStyleForElement(option1,'fontWeight', 'bold');
-    toggleStyleForElement(option2,'fontWeight', 'bold');
-    toggleStyleForElement(option3,'fontWeight', 'bold');
-    toggleStyleForElement(option4,'fontWeight', 'bold');
-    toggleStyleForElement(option5,'fontWeight', 'bold');
+    toggleStyleForElement(option1, 'fontWeight', 'bold');
+    toggleStyleForElement(option2, 'fontWeight', 'bold');
+    toggleStyleForElement(option3, 'fontWeight', 'bold');
+    toggleStyleForElement(option4, 'fontWeight', 'bold');
+    toggleStyleForElement(option5, 'fontWeight', 'bold');
 });
 
-if (!boldButton.classList.contains('active')){
+if (!boldButton.classList.contains('active')) {
     boldButton.classList.remove('active');
 }
 
 // Italic ths resutls 
-italicButton.addEventListener('click', function(){
+italicButton.addEventListener('click', function () {
     italicButton.classList.toggle('active');
-    toggleStyleForElement(option1,'fontStyle', 'italic');
-    toggleStyleForElement(option2,'fontStyle', 'italic');
-    toggleStyleForElement(option3,'fontStyle', 'italic');
-    toggleStyleForElement(option4,'fontStyle', 'italic');
-    toggleStyleForElement(option5,'fontStyle', 'italic');
+    toggleStyleForElement(option1, 'fontStyle', 'italic');
+    toggleStyleForElement(option2, 'fontStyle', 'italic');
+    toggleStyleForElement(option3, 'fontStyle', 'italic');
+    toggleStyleForElement(option4, 'fontStyle', 'italic');
+    toggleStyleForElement(option5, 'fontStyle', 'italic');
 });
 
-if (!italicButton.classList.contains('active')){
+if (!italicButton.classList.contains('active')) {
     italicButton.classList.remove('active');
 }
 
 // lowercase-----
-lowercaseButton.addEventListener('click', function(){
+lowercaseButton.addEventListener('click', function () {
     lowercaseButton.classList.add('active');
     uppercaseButton.classList.remove('active');
     normalcaseButton.classList.remove('active')
-    toggleStyleForElement(option1,'textTransform', 'lowercase');
-    toggleStyleForElement(option2,'textTransform', 'lowercase');
-    toggleStyleForElement(option3,'textTransform', 'lowercase');
-    toggleStyleForElement(option4,'textTransform', 'lowercase');
-    toggleStyleForElement(option5,'textTransform', 'lowercase');
+    toggleStyleForElement(option1, 'textTransform', 'lowercase');
+    toggleStyleForElement(option2, 'textTransform', 'lowercase');
+    toggleStyleForElement(option3, 'textTransform', 'lowercase');
+    toggleStyleForElement(option4, 'textTransform', 'lowercase');
+    toggleStyleForElement(option5, 'textTransform', 'lowercase');
 });
 
 // uppercase-----
-uppercaseButton.addEventListener('click', function(){
+uppercaseButton.addEventListener('click', function () {
     lowercaseButton.classList.remove('active');
     uppercaseButton.classList.add('active');
     normalcaseButton.classList.remove('active')
-    toggleStyleForElement(option1,'textTransform', 'uppercase');
-    toggleStyleForElement(option2,'textTransform', 'uppercase');
-    toggleStyleForElement(option3,'textTransform', 'uppercase');
-    toggleStyleForElement(option4,'textTransform', 'uppercase');
-    toggleStyleForElement(option5,'textTransform', 'uppercase');
+    toggleStyleForElement(option1, 'textTransform', 'uppercase');
+    toggleStyleForElement(option2, 'textTransform', 'uppercase');
+    toggleStyleForElement(option3, 'textTransform', 'uppercase');
+    toggleStyleForElement(option4, 'textTransform', 'uppercase');
+    toggleStyleForElement(option5, 'textTransform', 'uppercase');
 });
 
 // normalcase-----
-normalcaseButton.addEventListener('click', function(){
+normalcaseButton.addEventListener('click', function () {
     lowercaseButton.classList.remove('active');
     uppercaseButton.classList.remove('active');
     normalcaseButton.classList.add('active')
-    toggleStyleForElement(option1,'textTransform', 'none')
-    toggleStyleForElement(option2,'textTransform', 'none')
-    toggleStyleForElement(option3,'textTransform', 'none')
-    toggleStyleForElement(option4,'textTransform', 'none')
-    toggleStyleForElement(option5,'textTransform', 'none')
+    toggleStyleForElement(option1, 'textTransform', 'none')
+    toggleStyleForElement(option2, 'textTransform', 'none')
+    toggleStyleForElement(option3, 'textTransform', 'none')
+    toggleStyleForElement(option4, 'textTransform', 'none')
+    toggleStyleForElement(option5, 'textTransform', 'none')
 });
 
 //Change font
 
-fontSelector.addEventListener('change', function (){
-    switch(fontSelector.value){
+fontSelector.addEventListener('change', function () {
+    switch (fontSelector.value) {
         case 'Playfair':
-            toggleStyleForElement(option1,'fontFamily', "'Playfair', serif");
-            toggleStyleForElement(option2,'fontFamily', "'Playfair', serif");
-            toggleStyleForElement(option3,'fontFamily', "'Playfair', serif");
-            toggleStyleForElement(option4,'fontFamily', "'Playfair', serif");
-            toggleStyleForElement(option5,'fontFamily', "'Playfair', serif");
+            toggleStyleForElement(option1, 'fontFamily', "'Playfair', serif");
+            toggleStyleForElement(option2, 'fontFamily', "'Playfair', serif");
+            toggleStyleForElement(option3, 'fontFamily', "'Playfair', serif");
+            toggleStyleForElement(option4, 'fontFamily', "'Playfair', serif");
+            toggleStyleForElement(option5, 'fontFamily', "'Playfair', serif");
             break;
         case 'Times New Roman':
-            toggleStyleForElement(option1,'fontFamily', "'Times New Roman', Times, serif");
-            toggleStyleForElement(option2,'fontFamily', "'Times New Roman', Times, serif");
-            toggleStyleForElement(option3,'fontFamily', "'Times New Roman', Times, serif");
-            toggleStyleForElement(option4,'fontFamily', "'Times New Roman', Times, serif");
-            toggleStyleForElement(option5,'fontFamily', "'Times New Roman', Times, serif");
+            toggleStyleForElement(option1, 'fontFamily', "'Times New Roman', Times, serif");
+            toggleStyleForElement(option2, 'fontFamily', "'Times New Roman', Times, serif");
+            toggleStyleForElement(option3, 'fontFamily', "'Times New Roman', Times, serif");
+            toggleStyleForElement(option4, 'fontFamily', "'Times New Roman', Times, serif");
+            toggleStyleForElement(option5, 'fontFamily', "'Times New Roman', Times, serif");
             break;
         case 'Lato':
-            toggleStyleForElement(option1,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option2,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option3,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option4,'fontFamily', "'Lato', sans-serif");
-            toggleStyleForElement(option5,'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option1, 'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option2, 'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option3, 'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option4, 'fontFamily', "'Lato', sans-serif");
+            toggleStyleForElement(option5, 'fontFamily', "'Lato', sans-serif");
             break;
         case 'Brush Script MT':
-            toggleStyleForElement(option1,'fontFamily', "'Brush Script MT', cursive");
-            toggleStyleForElement(option2,'fontFamily', "'Brush Script MT', cursive");
-            toggleStyleForElement(option3,'fontFamily', "'Brush Script MT', cursive");
-            toggleStyleForElement(option4,'fontFamily', "'Brush Script MT', cursive");
-            toggleStyleForElement(option5,'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option1, 'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option2, 'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option3, 'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option4, 'fontFamily', "'Brush Script MT', cursive");
+            toggleStyleForElement(option5, 'fontFamily', "'Brush Script MT', cursive");
             break;
         case 'Impact':
-            toggleStyleForElement(option1,'fontFamily', "'Impact', sans-serif");
-            toggleStyleForElement(option2,'fontFamily', "'Impact', sans-serif");
-            toggleStyleForElement(option3,'fontFamily', "'Impact', sans-serif");
-            toggleStyleForElement(option4,'fontFamily', "'Impact', sans-serif");
-            toggleStyleForElement(option5,'fontFamily', "'Impact', sans-serif");
-        break;
+            toggleStyleForElement(option1, 'fontFamily', "'Impact', sans-serif");
+            toggleStyleForElement(option2, 'fontFamily', "'Impact', sans-serif");
+            toggleStyleForElement(option3, 'fontFamily', "'Impact', sans-serif");
+            toggleStyleForElement(option4, 'fontFamily', "'Impact', sans-serif");
+            toggleStyleForElement(option5, 'fontFamily', "'Impact', sans-serif");
+            break;
         default:
-            toggleStyleForElement(option1,'fontFamily', "'Exo 2', sans-serif");
-            toggleStyleForElement(option2,'fontFamily', "'Exo 2', sans-serif");
-            toggleStyleForElement(option3,'fontFamily', "'Exo 2', sans-serif");
-            toggleStyleForElement(option4,'fontFamily', "'Exo 2', sans-serif");
-            toggleStyleForElement(option5,'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option1, 'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option2, 'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option3, 'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option4, 'fontFamily', "'Exo 2', sans-serif");
+            toggleStyleForElement(option5, 'fontFamily', "'Exo 2', sans-serif");
 
     }
 });
 
 //Change font size
 
-fontSizeSlider.addEventListener('input', function(){
+fontSizeSlider.addEventListener('input', function () {
     let fontSize = fontSizeSlider.value + 'px';
 
-    toggleStyleForElement(option1,'fontSize', fontSize);
-    toggleStyleForElement(option2,'fontSize', fontSize);
-    toggleStyleForElement(option3,'fontSize', fontSize);
-    toggleStyleForElement(option4,'fontSize', fontSize);
-    toggleStyleForElement(option5,'fontSize', fontSize);
+    toggleStyleForElement(option1, 'fontSize', fontSize);
+    toggleStyleForElement(option2, 'fontSize', fontSize);
+    toggleStyleForElement(option3, 'fontSize', fontSize);
+    toggleStyleForElement(option4, 'fontSize', fontSize);
+    toggleStyleForElement(option5, 'fontSize', fontSize);
 });
 
 //Change theme 
 
 // Light Mode-----
-lightModeButton.addEventListener('click', function(){
+lightModeButton.addEventListener('click', function () {
     lightModeButton.classList.add('active');
     darkModeButton.classList.remove('active')
     root.style.setProperty('color-scheme', 'light')
 });
 
 // Dark Mode-----
-darkModeButton.addEventListener('click', function(){
+darkModeButton.addEventListener('click', function () {
     lightModeButton.classList.remove('active');
     darkModeButton.classList.add('active')
     root.style.setProperty('color-scheme', 'dark')
