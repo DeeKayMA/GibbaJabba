@@ -57,7 +57,7 @@ function processWord() {
     document.getElementById('option4').textContent = option4;
     document.getElementById('option5').textContent = option5;
 }
-
+//First iteration of getting a random word
 //Returns random word form array
 // function randWord() {
 //     let randomWords = [
@@ -153,7 +153,7 @@ const randButton = document.getElementById('randButton');
 const apiKey = "UvdhHhgzc3MbsFY6eQc6Xw==fhBF8WcUw9RwvJNo";
 
 randButton.addEventListener('click', () => {
-    fetch('https://api.api-ninjas.com/v1/randomword?adverb', {
+    fetch('https://api.api-ninjas.com/v1/randomword?type=adverb?limit=1', {
         method:'GET',
         headers: {
             'X-Api-Key': apiKey
